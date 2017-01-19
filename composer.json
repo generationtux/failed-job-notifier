@@ -1,0 +1,14 @@
+{
+    "name": "generationtux/failed-job-notifier",
+    "description": "Service provider for notifiying developers when Laravel's queue jobs fail",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lark Mullins",
+            "email": "larkmullins@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
