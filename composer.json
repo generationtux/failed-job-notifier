@@ -1,6 +1,6 @@
 {
     "name": "generationtux/failed-job-notifier",
-    "description": "Service provider for notifiying developers when Laravel's queue jobs fail",
+    "description": "Notification service provider for failed Laravel Queue Jobs",
     "type": "library",
     "license": "MIT",
     "authors": [
