@@ -6,9 +6,11 @@
     "authors": [
         {
             "name": "Lark Mullins",
-            "email": "larkmullins@gmail.com"
+            "email": "lark.mullins@generationtux.com"
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "pusher/pusher-php-server": "^2.6"
+    }
 }
