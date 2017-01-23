@@ -25,15 +25,15 @@ class FailedJobNotifierService extends ServiceProvider
                 getenv('PUSHER_APP_ID')
 			);
 			$pusher->trigger('failed-jobs', 'new-failed-job', []);
+            
+            if (getenv('APP_ENV') == 'production') {
+                Mail::send('healthz.emails.failed-job', [], function ($message) {
+                    $message->from(getenv('FAILED_JOBS_EMAIL_SENDER'), getenv('FAILED_JOBS_EMAIL_SENDER_NAME'));
+                    $message->to(getenv('FAILED_JOBS_EMAIL_RECIPIENTS'));
+                    $message->subject(getenv('FAILED_JOBS_EMAIL_SUBJECT'));
+                });
+            }
 		});
-		
-		if (getenv('APP_ENV') == 'production') {
-            Mail::send('healthz.emails.failed-job', [], function ($message) {
-                $message->from(getenv('FAILED_JOBS_EMAIL_SENDER'), getenv('FAILED_JOBS_EMAIL_SENDER_NAME'));
-                $message->to(getenv('FAILED_JOBS_EMAIL_RECIPIENTS'));
-                $message->subject(getenv('FAILED_JOBS_EMAIL_SUBJECT'));
-            });
-        }
 	}
 	
 	public function register() {}
