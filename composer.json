@@ -9,8 +9,25 @@
             "email": "lark.mullins@generationtux.com"
         }
     ],
-    "minimum-stability": "stable",
+	"minimum-stability": "dev",
     "require": {
-        "pusher/pusher-php-server": "^2.6"
+		"php": ">=5.5.9",
+		"pusher/pusher-php-server": "^2.6",
+        "illuminate/queue": "^5.3"
+    },
+    "require-dev": {
+        "illuminate/contracts": "^5.3",
+        "mockery/mockery": "^0.9.7",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "GenTux\\FailedJobNotifier\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     }
 }
