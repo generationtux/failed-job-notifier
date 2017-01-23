@@ -16,6 +16,11 @@ class FailedJobNotifierService extends ServiceProvider
      */
     protected $defer = true;
 	
+    /**
+     * Perform post-registration booting of services.
+     *
+     * @return void
+     */
 	public function boot()
 	{
 		Queue::failing(function($connection, $job, $data) {
@@ -36,5 +41,10 @@ class FailedJobNotifierService extends ServiceProvider
 		});
 	}
 	
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
 	public function register() {}
 }
