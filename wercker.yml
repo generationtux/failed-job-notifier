@@ -13,5 +13,4 @@ ci:
     - script:
         name: cleanup
         code: |
-          rm .env
           composer dump -o
