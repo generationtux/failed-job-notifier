@@ -51,10 +51,10 @@ class FailedJobNotifierServiceTest extends TestCase
 	/**
      * @test
      */
-    public function it_does_boot()
+    public function it_does_it_initialize()
     {
 		Queue::spy();
 		
-		$this->provider->boot();
+		$this->provider->init();
     }
 }
