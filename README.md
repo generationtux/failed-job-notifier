@@ -9,10 +9,12 @@ composer require generationtux/failed-job-notifier
 
 Next, setup the required ENV variables:
 ```
-PUSHER_KEY					   // Your Pusher Key
+PUSHER_KEY // Your Pusher Key
 PUSHER_SECRET					// Your Pusher Secret
 PUSHER_APP_ID					// Your Pusher App ID
 
+FAILED_JOBS_SERVICE		 		// Email to send from
+FAILED_JOBS_URL		 			// Email to send from
 FAILED_JOBS_EMAIL_SENDER		 // Email to send from
 FAILED_JOBS_EMAIL_SENDER_NAME	// Sender Name
 FAILED_JOBS_EMAIL_RECIPIENTS	 // Who gets the emails
