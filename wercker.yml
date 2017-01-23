@@ -9,7 +9,6 @@ ci:
     - script:
         name: test
         code: |
-          ./vendor/bin/phpcs -n --standard=PSR2 app/ && \
           ./vendor/bin/phpunit
     - script:
         name: cleanup
