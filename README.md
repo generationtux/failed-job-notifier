@@ -15,9 +15,9 @@ PUSHER_APP_ID					// Your Pusher App ID
 
 FAILED_JOBS_SERVICE		 		// Email to send from
 FAILED_JOBS_URL		 			// Email to send from
-FAILED_JOBS_EMAIL_SENDER		 // Email to send from
+FAILED_JOBS_EMAIL_SENDER		// Email to send from
 FAILED_JOBS_EMAIL_SENDER_NAME	// Sender Name
-FAILED_JOBS_EMAIL_RECIPIENTS	 // Who gets the emails
+FAILED_JOBS_EMAIL_RECIPIENTS	// Who gets the emails
 FAILED_JOBS_EMAIL_SUBJECT		// Subject of failed job emails
 ```
 
