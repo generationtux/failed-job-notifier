@@ -1,0 +1,18 @@
+# Build pipeline
+ci:
+  box: gentux/php-ci
+  steps:
+    - script:
+        name: setup
+        code: |
+          composer install
+    - script:
+        name: test
+        code: |
+          ./vendor/bin/phpcs -n --standard=PSR2 app/ && \
+          ./vendor/bin/phpunit
+    - script:
+        name: cleanup
+        code: |
+          rm .env
+          composer dump -o
