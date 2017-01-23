@@ -24,6 +24,16 @@ class FailedJobNotifierService extends ServiceProvider
      */
 	public function boot()
 	{
+		// register views location
+		$this->loadViewsFrom(__DIR__.'/views', 'failed-jobs-notifier');
+		
+		// initialize Queue failing listener
+		$this->init();
+	}
+	
+	public function init()
+	{
+		// when jobs fail
 		Queue::failing(function($connection, $job, $data) {
 			$pusher = new \Pusher(
 				getenv('PUSHER_KEY'),
@@ -33,7 +43,7 @@ class FailedJobNotifierService extends ServiceProvider
 			$pusher->trigger('failed-jobs', 'new-failed-job', []);
             
             if (getenv('APP_ENV') == 'production') {
-                Mail::send('healthz.emails.failed-job', [], function ($message) {
+                Mail::send('failed-jobs-notifier::email', [], function ($message) {
                     $message->from(getenv('FAILED_JOBS_EMAIL_SENDER'), getenv('FAILED_JOBS_EMAIL_SENDER_NAME'));
                     $message->to(getenv('FAILED_JOBS_EMAIL_RECIPIENTS'));
                     $message->subject(getenv('FAILED_JOBS_EMAIL_SUBJECT'));
